@@ -1,0 +1,37 @@
+groups:
+  - name: sandbox-alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[1m])) * 100) > 80
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage on {{ $labels.instance }}"
+          description: "CPU usage is above 80%"
+
+      - alert: HighDiskUsage
+        expr: (1 - (node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{fstype!~"tmpfs|overlay"})) * 100 > 80
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Disk usage high on {{ $labels.instance }}"
+          description: "Disk {{ $labels.mountpoint }} is above 80% full"
+
+      - alert: ServiceDown
+        expr: probe_success == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service {{ $labels.instance }} is down"
+          description: "HTTP probe failed for more than 30 seconds"
+
+      - alert: InstanceDown
+        expr: up == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Target {{ $labels.job }} is down"
