@@ -102,3 +102,8 @@ This project is intended for learning and demonstration. Review configuration, c
 ## Grafana Dashboard
 
 ![DevOps Monitoring Dashboard](screenshots/devops-dashboard.png)
+
+## Prometheus Targets
+
+![Prometheus Targets](screenshots/prometheus-targets.png)
+
