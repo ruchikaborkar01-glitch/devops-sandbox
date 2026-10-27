@@ -87,17 +87,6 @@ These URLs assume the services are running locally and the corresponding ports a
 - Blackbox Exporter supports endpoint probing.
 - Nginx provides a sample web service.
 
-## Screenshots
-
-Add screenshots to the `screenshots/` directory and display them here when available.
-
-Example:
-
-```markdown
-![Grafana Dashboard](screenshots/grafana-dashboard.png)
-![Prometheus Targets](screenshots/prometheus-targets.png)
-```
-
 ## Future Improvements
 
 - Validate alert notifications end to end.
@@ -109,6 +98,7 @@ Example:
 ## Disclaimer
 
 This project is intended for learning and demonstration. Review configuration, credentials, and network exposure before public or production deployment.
+
 ## Grafana Dashboard
 
 ![DevOps Monitoring Dashboard](screenshots/devops-dashboard.png)
