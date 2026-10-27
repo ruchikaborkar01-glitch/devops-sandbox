@@ -109,3 +109,6 @@ Example:
 ## Disclaimer
 
 This project is intended for learning and demonstration. Review configuration, credentials, and network exposure before public or production deployment.
+## Grafana Dashboard
+
+![DevOps Monitoring Dashboard](screenshots/devops-dashboard.png)
